@@ -11,7 +11,7 @@
 
 Pipeline que reproduce rtsp desde la cámara de vigilancia.
 
-gst-launch-1.0 -v rtspsrc location="rtsp://video:password123@192.168.0.151:554/cam/realmonitor?\
+gst-launch-1.0 -v rtspsrc location="rtsp://video:<password@ip_address:port>/cam/realmonitor?\
 channel=1&subtype=0&unicast=true&proto=Onvif" latency=200 \
 ! rtph265depay ! h265parse ! avdec_h265 ! videoscale ! videoconvert \
 ! videoconvert ! capsfilter caps=video/x-raw,width=1920,height=1080 \
