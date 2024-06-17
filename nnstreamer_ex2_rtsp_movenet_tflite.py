@@ -150,7 +150,7 @@ class NNStreamerExample:
       
         # Agregaré el algoritmo de detección de pose en en rtsp de la cámara de vigilancia.
         # init pipeline
-        strPipe = 'rtspsrc location=rtsp://video:password123@192.168.0.151:554/cam/realmonitor?'\
+        strPipe = 'rtspsrc location=rtsp://video:<password@ip_address:port>/cam/realmonitor?'\
             'channel=1&subtype=0&unicast=true&proto=Onvif latency=200 '
         strPipe += '! rtph265depay ! h265parse ! avdec_h265 ! videoconvert '
         strPipe += '! videoscale ! capsfilter caps=video/x-raw,width={:d},height={:d} ' \
